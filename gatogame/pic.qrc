@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>gato-negro.png</file>
+        <file>gato-title.png</file>
+        <file>tablero_svg.svg</file>
+    </qresource>
+</RCC>
