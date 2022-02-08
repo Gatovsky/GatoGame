@@ -560,7 +560,11 @@ compiler_rcc_clean:
 qrc_pic.cpp: ../gatogame/pic.qrc \
 		../../../Qt/6.2.3/gcc_64/libexec/rcc \
 		../gatogame/gato-title.png \
+		../gatogame/cuadrado.png \
 		../gatogame/tablero_svg.svg \
+		../gatogame/salir.png \
+		../gatogame/igual-que.png \
+		../gatogame/disgusto.png \
 		../gatogame/gato-negro.png
 	/home/elpsycongroo/Qt/6.2.3/gcc_64/libexec/rcc -name pic ../gatogame/pic.qrc -o qrc_pic.cpp
 

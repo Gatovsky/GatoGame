@@ -3,5 +3,9 @@
         <file>gato-negro.png</file>
         <file>gato-title.png</file>
         <file>tablero_svg.svg</file>
+        <file>cuadrado.png</file>
+        <file>disgusto.png</file>
+        <file>igual-que.png</file>
+        <file>salir.png</file>
     </qresource>
 </RCC>

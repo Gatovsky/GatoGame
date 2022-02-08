@@ -14,6 +14,7 @@
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -34,13 +35,22 @@ public:
     QAction *actionFreepik;
     QAction *actionFreepik_2;
     QWidget *centralwidget;
-    QFrame *frame_tablero;
     QFrame *frame_sel_opcion;
     QLabel *label_elige;
     QRadioButton *radioButtonX;
     QRadioButton *radioButtonO;
     QPushButton *pushButtonOK;
-    QLabel *label_gato_logo;
+    QGraphicsView *graphicsView_gato;
+    QLabel *label_tablero;
+    QLabel *label_casilla_1;
+    QLabel *label_casilla_2;
+    QLabel *label_casilla_3;
+    QLabel *label_casilla_4;
+    QLabel *label_casilla_5;
+    QLabel *label_casilla_6;
+    QLabel *label_casilla_7;
+    QLabel *label_casilla_8;
+    QLabel *label_casilla_9;
     QMenuBar *menubar;
     QMenu *menuMenu_Gatiano;
     QMenu *menuAcerca;
@@ -50,8 +60,8 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->setWindowModality(Qt::ApplicationModal);
-        MainWindow->resize(374, 376);
+        MainWindow->setWindowModality(Qt::NonModal);
+        MainWindow->resize(374, 424);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/gato-title.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -67,12 +77,6 @@ public:
         actionFreepik_2->setObjectName(QString::fromUtf8("actionFreepik_2"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        frame_tablero = new QFrame(centralwidget);
-        frame_tablero->setObjectName(QString::fromUtf8("frame_tablero"));
-        frame_tablero->setGeometry(QRect(50, 110, 261, 221));
-        frame_tablero->setStyleSheet(QString::fromUtf8("border-image: url(:/tablero_svg.svg);"));
-        frame_tablero->setFrameShape(QFrame::StyledPanel);
-        frame_tablero->setFrameShadow(QFrame::Raised);
         frame_sel_opcion = new QFrame(centralwidget);
         frame_sel_opcion->setObjectName(QString::fromUtf8("frame_sel_opcion"));
         frame_sel_opcion->setGeometry(QRect(20, 9, 331, 81));
@@ -90,10 +94,79 @@ public:
         pushButtonOK = new QPushButton(frame_sel_opcion);
         pushButtonOK->setObjectName(QString::fromUtf8("pushButtonOK"));
         pushButtonOK->setGeometry(QRect(20, 50, 80, 26));
-        label_gato_logo = new QLabel(frame_sel_opcion);
-        label_gato_logo->setObjectName(QString::fromUtf8("label_gato_logo"));
-        label_gato_logo->setGeometry(QRect(250, 10, 71, 61));
-        label_gato_logo->setStyleSheet(QString::fromUtf8("border-image: url(:/gato-negro.png);"));
+        graphicsView_gato = new QGraphicsView(frame_sel_opcion);
+        graphicsView_gato->setObjectName(QString::fromUtf8("graphicsView_gato"));
+        graphicsView_gato->setGeometry(QRect(240, 0, 91, 81));
+        graphicsView_gato->setStyleSheet(QString::fromUtf8("border-image: url(:/gato-negro.png);"));
+        label_tablero = new QLabel(centralwidget);
+        label_tablero->setObjectName(QString::fromUtf8("label_tablero"));
+        label_tablero->setGeometry(QRect(40, 130, 291, 251));
+        label_tablero->setStyleSheet(QString::fromUtf8("background-color: rgb(246, 245, 244);\n"
+"border-image: url(:/cuadrado.png);\n"
+""));
+        label_casilla_1 = new QLabel(centralwidget);
+        label_casilla_1->setObjectName(QString::fromUtf8("label_casilla_1"));
+        label_casilla_1->setGeometry(QRect(60, 150, 61, 51));
+        label_casilla_1->setLayoutDirection(Qt::LeftToRight);
+        label_casilla_1->setStyleSheet(QString::fromUtf8("font: 700 32pt \"Noto Sans\";"));
+        label_casilla_1->setFrameShadow(QFrame::Plain);
+        label_casilla_1->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+        label_casilla_2 = new QLabel(centralwidget);
+        label_casilla_2->setObjectName(QString::fromUtf8("label_casilla_2"));
+        label_casilla_2->setGeometry(QRect(150, 150, 61, 51));
+        label_casilla_2->setLayoutDirection(Qt::LeftToRight);
+        label_casilla_2->setStyleSheet(QString::fromUtf8("font: 700 32pt \"Noto Sans\";"));
+        label_casilla_2->setFrameShadow(QFrame::Plain);
+        label_casilla_2->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+        label_casilla_3 = new QLabel(centralwidget);
+        label_casilla_3->setObjectName(QString::fromUtf8("label_casilla_3"));
+        label_casilla_3->setGeometry(QRect(250, 150, 61, 51));
+        label_casilla_3->setLayoutDirection(Qt::LeftToRight);
+        label_casilla_3->setStyleSheet(QString::fromUtf8("font: 700 32pt \"Noto Sans\";"));
+        label_casilla_3->setFrameShadow(QFrame::Plain);
+        label_casilla_3->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+        label_casilla_4 = new QLabel(centralwidget);
+        label_casilla_4->setObjectName(QString::fromUtf8("label_casilla_4"));
+        label_casilla_4->setGeometry(QRect(60, 230, 61, 51));
+        label_casilla_4->setLayoutDirection(Qt::LeftToRight);
+        label_casilla_4->setStyleSheet(QString::fromUtf8("font: 700 32pt \"Noto Sans\";"));
+        label_casilla_4->setFrameShadow(QFrame::Plain);
+        label_casilla_4->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+        label_casilla_5 = new QLabel(centralwidget);
+        label_casilla_5->setObjectName(QString::fromUtf8("label_casilla_5"));
+        label_casilla_5->setGeometry(QRect(150, 230, 71, 51));
+        label_casilla_5->setLayoutDirection(Qt::LeftToRight);
+        label_casilla_5->setStyleSheet(QString::fromUtf8("font: 700 32pt \"Noto Sans\";"));
+        label_casilla_5->setFrameShadow(QFrame::Plain);
+        label_casilla_5->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+        label_casilla_6 = new QLabel(centralwidget);
+        label_casilla_6->setObjectName(QString::fromUtf8("label_casilla_6"));
+        label_casilla_6->setGeometry(QRect(250, 230, 61, 51));
+        label_casilla_6->setLayoutDirection(Qt::LeftToRight);
+        label_casilla_6->setStyleSheet(QString::fromUtf8("font: 700 32pt \"Noto Sans\";"));
+        label_casilla_6->setFrameShadow(QFrame::Plain);
+        label_casilla_6->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+        label_casilla_7 = new QLabel(centralwidget);
+        label_casilla_7->setObjectName(QString::fromUtf8("label_casilla_7"));
+        label_casilla_7->setGeometry(QRect(60, 310, 61, 51));
+        label_casilla_7->setLayoutDirection(Qt::LeftToRight);
+        label_casilla_7->setStyleSheet(QString::fromUtf8("font: 700 32pt \"Noto Sans\";"));
+        label_casilla_7->setFrameShadow(QFrame::Plain);
+        label_casilla_7->setAlignment(Qt::AlignCenter);
+        label_casilla_8 = new QLabel(centralwidget);
+        label_casilla_8->setObjectName(QString::fromUtf8("label_casilla_8"));
+        label_casilla_8->setGeometry(QRect(150, 310, 71, 51));
+        label_casilla_8->setLayoutDirection(Qt::LeftToRight);
+        label_casilla_8->setStyleSheet(QString::fromUtf8("font: 700 32pt \"Noto Sans\";"));
+        label_casilla_8->setFrameShadow(QFrame::Plain);
+        label_casilla_8->setAlignment(Qt::AlignCenter);
+        label_casilla_9 = new QLabel(centralwidget);
+        label_casilla_9->setObjectName(QString::fromUtf8("label_casilla_9"));
+        label_casilla_9->setGeometry(QRect(250, 310, 61, 51));
+        label_casilla_9->setLayoutDirection(Qt::LeftToRight);
+        label_casilla_9->setStyleSheet(QString::fromUtf8("font: 700 32pt \"Noto Sans\";"));
+        label_casilla_9->setFrameShadow(QFrame::Plain);
+        label_casilla_9->setAlignment(Qt::AlignCenter);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -132,7 +205,16 @@ public:
         radioButtonX->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
         radioButtonO->setText(QCoreApplication::translate("MainWindow", "O", nullptr));
         pushButtonOK->setText(QCoreApplication::translate("MainWindow", "OK", nullptr));
-        label_gato_logo->setText(QString());
+        label_tablero->setText(QString());
+        label_casilla_1->setText(QCoreApplication::translate("MainWindow", "y", nullptr));
+        label_casilla_2->setText(QCoreApplication::translate("MainWindow", "y", nullptr));
+        label_casilla_3->setText(QCoreApplication::translate("MainWindow", "y", nullptr));
+        label_casilla_4->setText(QCoreApplication::translate("MainWindow", "y", nullptr));
+        label_casilla_5->setText(QCoreApplication::translate("MainWindow", "y", nullptr));
+        label_casilla_6->setText(QCoreApplication::translate("MainWindow", "y", nullptr));
+        label_casilla_7->setText(QCoreApplication::translate("MainWindow", "y", nullptr));
+        label_casilla_8->setText(QCoreApplication::translate("MainWindow", "y", nullptr));
+        label_casilla_9->setText(QCoreApplication::translate("MainWindow", "y", nullptr));
         menuMenu_Gatiano->setTitle(QCoreApplication::translate("MainWindow", "Menu Gatiano", nullptr));
         menuAcerca->setTitle(QCoreApplication::translate("MainWindow", "Acerca", nullptr));
     } // retranslateUi
